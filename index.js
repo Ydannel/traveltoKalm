@@ -13,7 +13,7 @@ db.authenticate()
         .then(()=> console.log('db conectada'))
         .catch( error => console.log(error))
 
-//const port = process.env.PORT || 4000;
+
 //req = lo que uno envia, res = lo que express nos responde
 
 //habilitar pug
