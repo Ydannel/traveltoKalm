@@ -1,0 +1,27 @@
+extends ./Layouts/index
+
+block contenido
+    main.container.mt-5
+        h1.text-center Testimonios 
+
+        blockquote.text-center Opiniones de nuestros clientes
+        include ./Layouts/bloques-testimonios
+        .row.mt-2
+            .col-md-12
+                h2.d-block.w-100.text-center Agrega un nuevo testimonio
+                if(errores)
+                    each error in errores
+                        .alert.col.alert-danger.text-center= error.mensaje
+            .row.justify-content-center.col
+                .col-md-8
+                    form(action ="/testimonios" method="POST")
+                        .form-group
+                            label Nombre
+                            input(type="text", placeholder="Tu nombre", name="nombre", class="form-control", value= nombre)
+                        .form-group
+                            label Correo
+                            input(type="email", placeholder="Tu Correo", name="correo", class="form-control", value= correo )
+                        .form-group
+                            label Mensaje
+                            textarea(class="form-control" ,cols="30", rows="10", name="mensaje" ,placeholder="Escribe tu mensaje..." )= mensaje
+                        input(type="submit" ,class="btn btn-success btn-block")
