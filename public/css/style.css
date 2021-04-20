@@ -91,6 +91,9 @@ header .nav a {
     font-size: 2rem;
     color: white;
 }
+footer{
+    background-color: #fffffe;
+}
 footer .nav a,
 .copyright {
     font-family: 'Staatliches', cursive;
