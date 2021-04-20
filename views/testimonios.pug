@@ -17,11 +17,11 @@ block contenido
                     form(action ="/testimonios" method="POST")
                         .form-group
                             label Nombre
-                            input(type="text", placeholder="Tu nombre", name="nombre", class="form-control", value= nombre)
+                            input(type="text", placeholder="Tu nombre", name="nombre", class="form-control", required,value= nombre)
                         .form-group
                             label Correo
-                            input(type="email", placeholder="Tu Correo", name="correo", class="form-control", value= correo )
+                            input(type="email", placeholder="Tu Correo", name="correo", class="form-control", required, value= correo )
                         .form-group
                             label Mensaje
-                            textarea(class="form-control" ,cols="30", rows="10", name="mensaje" ,placeholder="Escribe tu mensaje..." )= mensaje
+                            textarea(class="form-control" ,cols="30", rows="10", name="mensaje" , required, placeholder="Escribe tu mensaje..." )= mensaje
                         input(type="submit" ,class="btn btn-success btn-block")

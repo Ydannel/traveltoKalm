@@ -4,8 +4,8 @@ import Testimonio from '../Models/testimonios.js';
 
 const pagInicio = async (req, res)=>{
     const promiseDB = []
-    promiseDB.push( await Viaje.find({limit: 3}))
-    promiseDB.push( await Testimonio.find({limit: 3}))
+    promiseDB.push( await Viaje.find().limit(3))
+    promiseDB.push( await Testimonio.find().limit(3))
     //bd a viajes 3 
     try {
         const resultado = await Promise.all(promiseDB)
