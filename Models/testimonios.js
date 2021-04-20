@@ -1,15 +1,21 @@
-import Sequelize from 'sequelize';
-import db from '../config/db.js';
+import mongoose from 'mongoose';
 
-export const Testimonio = db.define('testimonios',{
+const Testimonio = mongoose.Schema({
     nombre: {
-        type: Sequelize.STRING
+        type: String,
+        required: true,
+        trim: true
     },
     correo: {
-        type: Sequelize.STRING
+        type: String,
+        required: true,
+        trim: true
     },
     mensaje: {
-        type: Sequelize.STRING
+        type: String,
+        required: true,
+        trim: true
     },
-    
-})
+});
+
+export default mongoose.model('testimonios', Testimonio);

@@ -1,18 +1,15 @@
 import express from 'express';
 import router from './routes/index.js';
-import db from './config/db.js';
+import conectarDB from './config/db.js';
 import dotenv from 'dotenv';
+
 dotenv.config({path:'variables.env'})
 
 const app = express();
 
 
 //conectar a db
-
-db.authenticate()
-        .then(()=> console.log('db conectada'))
-        .catch( error => console.log(error))
-
+conectarDB();
 
 //req = lo que uno envia, res = lo que express nos responde
 

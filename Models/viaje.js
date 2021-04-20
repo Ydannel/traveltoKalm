@@ -1,29 +1,39 @@
-import Sequelize from 'sequelize';
-import db from '../config/db.js';
+import mongoose from 'mongoose'
+const Schema = mongoose.Schema;
 
-export const Viaje = db.define('viajes',{
+const viajesSchema = new Schema({
     titulo: {
-        type: Sequelize.STRING
+        type: String,
+        required: true,
+        trim: true
     },
     precio: {
-        type: Sequelize.STRING
+        type: String,
+        required: true,
+        trim: true
     },
     fecha_ida: {
-        type: Sequelize.DATE
+        type: Date,
     },
     fecha_vuelta: {
-        type: Sequelize.DATE
+        type: Date,
     },
     imagen: {
-        type: Sequelize.STRING
+        type: String,
+       
     },
     descripcion: {
-        type: Sequelize.STRING
+        type: String,
+       
     },
     disponibles: {
-        type: Sequelize.STRING
+        type: String,
+       
     },
     slug: {
-        type: Sequelize.STRING
+        type: String,
+       
     }
-})
+});
+
+export default  mongoose.model('viajes', viajesSchema);

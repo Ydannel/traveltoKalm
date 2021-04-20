@@ -1,4 +1,4 @@
-import {Testimonio} from '../Models/testimonios.js';
+import Testimonio from '../Models/testimonios.js';
 
 const guardarTestimonio =  async (req, res) =>{
 
@@ -34,11 +34,8 @@ const guardarTestimonio =  async (req, res) =>{
     else{
         //almacenar
         try {
-            await Testimonio.create({
-                nombre,
-                correo, 
-                mensaje
-            });
+            const testimonio = new Testimonio({nombre, correo, mensaje});
+            await testimonio.save();
             res.redirect('/testimonios')
         } catch (error) {
             console.log(error);
